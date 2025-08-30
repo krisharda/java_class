@@ -1,0 +1,177 @@
+// 1. Sum of Natural Numbers
+import java.util.Scanner;
+public class SumNatural {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int total = 0;
+        int i = 1;
+        while (i <= n) {
+            total += i;
+            i++;
+        }
+        System.out.println("Sum = " + total);
+    }
+}
+
+
+// 2. Multiplication Table
+import java.util.Scanner;
+public class MultiplicationTable {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int i = 1;
+        do {
+            System.out.println(num + " x " + i + " = " + (num * i));
+            i++;
+        } while (i <= 10);
+    }
+}
+
+
+// 3. Factorial of a Number
+import java.util.Scanner;
+public class Factorial {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        long fact = 1;
+        int k = n;
+        while (k > 0) {
+            fact *= k;
+            k--;
+        }
+        System.out.println("Factorial is: " + fact);
+    }
+}
+
+
+// 4. Count Digits in a Number
+import java.util.Scanner;
+public class CountDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int count = 0;
+        int temp = num;
+        while (temp > 0) {
+            count++;
+            temp /= 10;
+        }
+        System.out.println("Digits: " + count);
+    }
+}
+
+
+// 5. Sum of Digits
+import java.util.Scanner;
+public class SumDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int sum = 0;
+        while (n > 0) {
+            sum += n % 10;
+            n /= 10;
+        }
+        System.out.println("Digit Sum = " + sum);
+    }
+}
+
+
+// 6. Palindrome Number
+import java.util.Scanner;
+public class Palindrome {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int original = num;
+        int reverse = 0;
+        while (num != 0) {
+            reverse = reverse * 10 + num % 10;
+            num /= 10;
+        }
+        System.out.println(original == reverse ? "Palindrome" : "Not Palindrome");
+    }
+}
+
+
+// 7. Fibonacci Series
+import java.util.Scanner;
+public class Fibonacci {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int terms = sc.nextInt();
+        int a = 0, b = 1;
+        System.out.print("Series: ");
+        for (int i = 1; i <= terms; i++) {
+            System.out.print(a + " ");
+            int next = a + b;
+            a = b;
+            b = next;
+        }
+    }
+}
+
+
+// 8. Prime Number Check
+import java.util.Scanner;
+public class PrimeCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        boolean isPrime = true;
+        if (n < 2) {
+            isPrime = false;
+        } else {
+            for (int i = 2; i <= Math.sqrt(n); i++) {
+                if (n % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+        }
+        System.out.println(isPrime ? "Prime" : "Not Prime");
+    }
+}
+
+
+// 9. Armstrong Number
+import java.util.Scanner;
+public class Armstrong {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int temp = num;
+        int sum = 0;
+        while (temp > 0) {
+            int digit = temp % 10;
+            sum += Math.pow(digit, 3);
+            temp /= 10;
+        }
+        System.out.println(sum == num ? "Armstrong" : "Not Armstrong");
+    }
+}
+
+
+// 10. Strong Number
+import java.util.Scanner;
+public class StrongNumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int sum = 0, temp = num;
+        while (temp > 0) {
+            int d = temp % 10;
+            int fact = 1, j = 1;
+            while (j <= d) {
+                fact *= j;
+                j++;
+            }
+            sum += fact;
+            temp /= 10;
+        }
+        System.out.println(sum == num ? "Strong" : "Not Strong");
+    }
+}
